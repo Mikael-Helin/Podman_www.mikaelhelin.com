@@ -1,0 +1,17 @@
+[Unit]
+Description=Run www.mikaelhelin.com web service at boot
+After=network-online.target podman.socket
+Requires=nginx-proxy.service
+After=nginx-proxy.service
+
+[Service]
+User=production
+Restart=always
+ExecStart=/usr/bin/bash /home/production/www.mikaelhelin.com/run_www.mikaelhelin.com.sh
+
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl daemon-reload
+systemctl enable www.mikaelhelin.com.service
+reboot
