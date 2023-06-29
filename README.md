@@ -30,13 +30,13 @@ There are a few urls we need to CNAME at my domain registry, they are for exampl
 * git.mikaelhelin.com
 * wiki.mikaelhelin.com
 
-First we build a script for www.mikaelhelin.com
+First chmod the script for www.mikaelhelin.com
 
     su - production
     cd ~/www.mikaelhelin.com
     chmod +x run_www.mikaelhelin.com.sh
 
-Insert the systemd file to run run_www.mikaelhelin.com.sh
+and then insert a systemd file to run the script
 
     su -
     mv www.mikaelhelin.com.service /etc/systemd/system/www.mikaelhelin.com.service
